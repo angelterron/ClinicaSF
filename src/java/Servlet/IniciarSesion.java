@@ -9,6 +9,7 @@ import Controlador.Consultas;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author agustkd96
  */
+@WebServlet("/IniciarSesion")
 public class IniciarSesion extends HttpServlet {
 
     /**
@@ -39,7 +41,6 @@ public class IniciarSesion extends HttpServlet {
         Consultas co = new Consultas();
         
         if(co.autenticacion(usuario, contra)){
-            
             HttpSession objsesion= request.getSession(true);
             objsesion.setAttribute("usuario", usuario);
             //Para agregar un nuevo atributo se tiene que iniciar otra conexion a la db por que si no devuelve NULL, no c pork
@@ -50,7 +51,7 @@ public class IniciarSesion extends HttpServlet {
             Consultas co3= new Consultas();
             String idtipo= co3.getIDTipo_Empleado(usuario);
             objsesion.setAttribute("idtipo", idtipo);
-
+            response.getWriter().write(usuario);
             response.sendRedirect("index.jsp");
         }else
             response.sendRedirect("login.jsp");
@@ -68,7 +69,11 @@ public class IniciarSesion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        HttpSession objsesion= request.getSession(true);
+        String usuario = request.getParameter("usuario");        
+        response.getWriter().write(usuario);
+    //processRequest(request, response);
     }
 
     /**

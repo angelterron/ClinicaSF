@@ -5,8 +5,10 @@
  */
 package Controlador;
 
+import POJOS.Usuario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -178,6 +180,41 @@ public class Consultas extends Conexion{
         }
         
         return resultfin;
+    }
+    public ArrayList<Usuario> getUsuarios(){
+        PreparedStatement pst=null;
+        ResultSet rs=null;
+        String result=null;
+        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+     try {            
+            String consulta="select * from usuarios";
+            pst = getConexion().prepareStatement(consulta);
+            rs=pst.executeQuery();
+            while(rs.next()){
+                Usuario usuario = new Usuario();
+                usuario.setIdTipo_Usuario(rs.getInt("idTipo_Usuario"));                
+                usuario.setNombre_usuario(rs.getString("nombre_usuario"));
+                usuario.setContrasenia(rs.getString("contrasenia"));
+                usuario.setIdTipo_Usuario(rs.getInt("idTipo_Usuario"));
+                usuario.setStatus(rs.getInt("Status"));
+                usuario.setDescripcion(rs.getString("Descripcion"));
+                listaUsuarios.add(usuario);
+            }            
+        } catch (Exception e) {
+            System.err.println("Error"+e);
+        }finally{
+            try {
+                 if(getConexion()!=null)
+                    getConexion().close();
+                 if(pst!=null)
+                     pst.close();
+                 if(rs!=null)
+                     rs.close();
+            } catch (Exception e) {
+                System.err.println("Error "+e);
+            }
+        }
+        return listaUsuarios;
     }
     
 }
