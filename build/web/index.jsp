@@ -7,7 +7,6 @@
     if(usuario==null){
         response.sendRedirect("login.jsp");
     }
-    
 %>
 <html lang="en">
 <!-- BEGIN HEAD -->
@@ -345,7 +344,8 @@
 	                                    <img src="assets/img/dp.jpg" class="img-circle user-img-circle" alt="User Image" />
 	                                </div>
 	                                <div class="pull-left info">
-                                            <p> <% out.print(usuario); %></p>
+                                            <p> <% out.print((String)objsesion.getAttribute("usuario")); %></p>
+                                            <p> <% out.print((String)objsesion.getAttribute("tipo")); %></p>
 	                                    <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline"> Online</span></a>
 	                                </div>
 	                            </div>

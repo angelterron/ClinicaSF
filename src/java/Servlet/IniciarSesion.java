@@ -39,9 +39,18 @@ public class IniciarSesion extends HttpServlet {
         Consultas co = new Consultas();
         
         if(co.autenticacion(usuario, contra)){
-            HttpSession objsesion= request.getSession(true);
             
+            HttpSession objsesion= request.getSession(true);
             objsesion.setAttribute("usuario", usuario);
+            //Para agregar un nuevo atributo se tiene que iniciar otra conexion a la db por que si no devuelve NULL, no c pork
+            Consultas co2= new Consultas();
+            String tipo = co2.getIDyTipo(usuario);
+            objsesion.setAttribute("tipo",tipo);
+            
+            Consultas co3= new Consultas();
+            String idtipo= co3.getIDTipo_Empleado(usuario);
+            objsesion.setAttribute("idtipo", idtipo);
+
             response.sendRedirect("index.jsp");
         }else
             response.sendRedirect("login.jsp");
