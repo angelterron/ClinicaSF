@@ -376,6 +376,32 @@
 	                                </li>
 	                            </ul>
 	                        </li>
+
+                                <li class="nav-item start active">
+	                            <a href="#" class="nav-link nav-toggle">
+	                                <i class="icon-people"></i>
+	                                <span class="title">Usuarios</span>
+                                	<span class="selected"></span>
+                                	<span class="arrow open"></span>
+	                            </a>
+	                            <ul class="sub-menu">
+	                                <li class="nav-item active">
+	                                    <a href="index.html" class="nav-link ">
+                                                <i class="icon-user"></i>
+                                                
+	                                        <span class="title">Ver Usuarios</span>
+	                                        <span class="selected"></span>
+	                                    </a>
+	                                </li>
+	                                <li class="nav-item ">
+	                                    <a href="dashboard2.html" class="nav-link ">
+                                                <i class="icon-user-follow"></i>
+	                                        <span class="title">Agregar Usuarios</span>
+	                                    </a>
+	                                </li>
+	                            </ul>
+	                        </li>
+                                
 	                        <li class="nav-item">
 	                            <a href="event.html" class="nav-link nav-toggle"> <i class="material-icons">event</i>
 	                                <span class="title">Event Management</span> 
