@@ -18,4 +18,16 @@ public class Usuarios {
         Consultas consulta = new Consultas();
         return consulta.getUsuarios();
     }
+    
+    public boolean AltaUsuario(String idUser){
+        
+        Consultas consulta= new Consultas();
+        return consulta.ActivarUsuario(idUser);
+    }
+    
+    public boolean BajaUsuario(String idUser){
+        
+        Consultas consulta= new Consultas();
+        return consulta.BajaUsuario(idUser);
+    }
 }

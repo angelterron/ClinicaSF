@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import POJOS.TipoUsuario;
 import POJOS.Usuario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -187,17 +188,27 @@ public class Consultas extends Conexion{
         String result=null;
         ArrayList<Usuario> listaUsuarios = new ArrayList<>();
      try {            
-            String consulta="select * from usuarios";
+            String consulta="select * from usuarios,Tipo_Usuario where usuarios.idTipo_Usuario=Tipo_Usuario.idTipo_Usuario";
             pst = getConexion().prepareStatement(consulta);
             rs=pst.executeQuery();
             while(rs.next()){
                 Usuario usuario = new Usuario();
-                usuario.setIdTipo_Usuario(rs.getInt("idTipo_Usuario"));                
-                usuario.setNombre_usuario(rs.getString("nombre_usuario"));
-                usuario.setContrasenia(rs.getString("contrasenia"));
-                usuario.setIdTipo_Usuario(rs.getInt("idTipo_Usuario"));
-                usuario.setStatus(rs.getInt("Status"));
-                usuario.setDescripcion(rs.getString("Descripcion"));
+                TipoUsuario tipoUsuario = new TipoUsuario();
+                
+                //Llenando tipo
+                tipoUsuario.setIdTipo_Usuario(rs.getInt("Tipo_Usuario.idTipo_Usuario"));
+                tipoUsuario.setNombreTipo_Usuario(rs.getString("Tipo_Usuario.NombreTipo_Usuario"));
+                tipoUsuario.setStatus(rs.getInt("Tipo_Usuario.Status"));
+                tipoUsuario.setDescripcion(rs.getString("Tipo_Usuario.Descripcion"));
+                
+        
+                //llenando usuario
+                usuario.setIdUsuarios(rs.getInt("Usuarios.idUsuarios"));
+                usuario.setNombre_usuario(rs.getString("Usuarios.nombre_usuario"));
+                usuario.setContrasenia(rs.getString("Usuarios.contrasenia"));
+                usuario.setObjTipo_Usuario(tipoUsuario);
+                usuario.setStatus(rs.getInt("Usuarios.Status"));
+                usuario.setDescripcion(rs.getString("Usuarios.Descripcion"));
                 listaUsuarios.add(usuario);
             }            
         } catch (Exception e) {
@@ -215,6 +226,66 @@ public class Consultas extends Conexion{
             }
         }
         return listaUsuarios;
+    }
+    
+    public boolean ActivarUsuario (String idUser){
+        PreparedStatement pst=null;
+        ResultSet rs=null;
+        String resultfin=null;
+        try {
+            String consulta="UPDATE usuarios SET Status = 1 WHERE idUsuarios=?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, idUser);
+            
+            if(pst.executeUpdate()==1)
+                return true;
+        } catch (Exception e) {
+            System.err.println("Error"+e);
+        }finally{
+            try {
+                 if(getConexion()!=null)
+                    getConexion().close();
+                 if(pst!=null)
+                     pst.close();
+                 if(rs!=null)
+                     rs.close();
+            } catch (Exception e) {
+                System.err.println("Error "+e);
+            }
+        }
+        
+        
+        return false;
+    }
+
+    public boolean BajaUsuario (String idUser){
+        PreparedStatement pst=null;
+        ResultSet rs=null;
+        String resultfin=null;
+        try {
+            String consulta="UPDATE usuarios SET Status = 0 WHERE idUsuarios=?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, idUser);
+            
+            if(pst.executeUpdate()==1)
+                return true;
+        } catch (Exception e) {
+            System.err.println("Error"+e);
+        }finally{
+            try {
+                 if(getConexion()!=null)
+                    getConexion().close();
+                 if(pst!=null)
+                     pst.close();
+                 if(rs!=null)
+                     rs.close();
+            } catch (Exception e) {
+                System.err.println("Error "+e);
+            }
+        }
+        
+        
+        return false;
     }
     
 }

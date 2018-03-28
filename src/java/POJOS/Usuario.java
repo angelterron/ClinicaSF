@@ -13,7 +13,7 @@ public class Usuario {
     private int idUsuarios;
     private String nombre_usuario;
     private String contrasenia;
-    private int idTipo_Usuario;
+    private TipoUsuario ObjTipo_Usuario;
     private int Status;
     private String Descripcion;
 
@@ -41,12 +41,12 @@ public class Usuario {
         this.contrasenia = contrasenia;
     }
 
-    public int getIdTipo_Usuario() {
-        return idTipo_Usuario;
+    public TipoUsuario getObjTipo_Usuario() {
+        return ObjTipo_Usuario;
     }
 
-    public void setIdTipo_Usuario(int idTipo_Usuario) {
-        this.idTipo_Usuario = idTipo_Usuario;
+    public void setObjTipo_Usuario(TipoUsuario ObjTipo_Usuario) {
+        this.ObjTipo_Usuario = ObjTipo_Usuario;
     }
 
     public int getStatus() {
