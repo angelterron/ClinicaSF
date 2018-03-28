@@ -1,5 +1,8 @@
 $(document).ready(function(){   
-   $.get("Usuarios",function(json){
+   verUsuarios();
+});
+function verUsuarios(){
+    $.get("Usuarios",function(json){
       var $table = $("#tablaUsuarios");
       var usuarios = JSON.parse(json);
       var i;
@@ -18,5 +21,5 @@ $(document).ready(function(){
               $("</tr>").appendTo($table);
       }
    });
-});
+};
 

@@ -64,9 +64,6 @@ public class ActivarUsuario extends HttpServlet {
         String idUser=request.getParameter("id");
         DAO.Usuarios usuariosDAO= new DAO.Usuarios();
         usuariosDAO.AltaUsuario(idUser);
-        
-        processRequest(request, response);
-        response.sendRedirect("VerUsuarios.jsp");
     }
 
     /**
