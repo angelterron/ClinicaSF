@@ -386,7 +386,7 @@
 	                            </a>
 	                            <ul class="sub-menu">
 	                                <li class="nav-item active">
-	                                    <a href="VerUsuarios.html" class="nav-link ">
+	                                    <a href="VerUsuarios.jsp" class="nav-link ">
                                                 <i class="icon-user"></i>
                                                 
 	                                        <span class="title">Ver Usuarios</span>
