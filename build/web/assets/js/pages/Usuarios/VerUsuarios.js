@@ -1,5 +1,5 @@
 $(document).ready(function(){       
-    verUsuarios();            
+    verUsuarios();
 });
 function verUsuarios(){
     $.get("Usuarios",function(json){
@@ -28,10 +28,9 @@ function verUsuarios(){
        
     });
     $(".alta").on("click",function(){
-       $.post("activate",{id:$(this).val()},function(){
+       $.get("activate",{id:$(this).val()},function(){
            verUsuarios();
-       });
-       
+       });   
     });
    });  
    

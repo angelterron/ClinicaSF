@@ -46,7 +46,9 @@ public class ActivarUsuario extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String idUser=request.getParameter("id");
+        DAO.Usuarios usuariosDAO= new DAO.Usuarios();
+        usuariosDAO.AltaUsuario(idUser);        
     }
 
     /**
@@ -59,11 +61,8 @@ public class ActivarUsuario extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-        String idUser=request.getParameter("id");
-        DAO.Usuarios usuariosDAO= new DAO.Usuarios();
-        usuariosDAO.AltaUsuario(idUser);
+            throws ServletException, IOException {                
+        processRequest(request, response);
     }
 
     /**
