@@ -1,13 +1,4 @@
 <!DOCTYPE html>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    HttpSession objsesion= request.getSession(false);
-    String usuario = (String) objsesion.getAttribute("usuario");
-    if(usuario==null){
-        response.sendRedirect("login.jsp");
-    }
-%>
 <html lang="en">
 <!-- BEGIN HEAD -->
 <head>
@@ -25,28 +16,26 @@
 	<link href="fonts/material-design-icons/material-icon.css" rel="stylesheet" type="text/css" />
 	<!--bootstrap -->
 	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<link href="assets/plugins/summernote/summernote.css" rel="stylesheet">
-    <!-- Material Design Lite CSS -->
+	<!-- Material Design Lite CSS -->
 	<link rel="stylesheet" href="assets/plugins/material/material.min.css">
 	<link rel="stylesheet" href="assets/css/material_style.css">
 	<!-- animation -->
 	<link href="assets/css/pages/animate_page.css" rel="stylesheet">
-	<!-- inbox style -->
-    <link href="assets/css/pages/inbox.min.css" rel="stylesheet" type="text/css" />
 	<!-- Theme Styles -->
     
-    <link href="assets/css/plugins.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/pages/formlayout.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/theme-color.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/theme-color.css" rel="stylesheet" type="text/css" />
 	<!-- favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.ico" /> 
- </head>
- <!-- END HEAD -->
+</head>
+<!-- END HEAD -->
 <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white dark-sidebar-color logo-dark">
     <div class="page-wrapper">
         <!-- start header -->
-        <div class="page-header navbar navbar-fixed-top">
+		<div class="page-header navbar navbar-fixed-top">
             <div class="page-header-inner ">
                 <!-- logo start -->
                 <div class="page-logo">
@@ -85,16 +74,16 @@
                                     <a class="deutsch"><img src="assets/img/flags/de.png" alt=""> Deutsch</a>
                                 </li>
                                 <li>
-                                    <a class="ukrainian"><img src="assets/img/flags/ua.png" alt=""> Ð£ÐºÑÐ°ÑÐ½ÑÑÐºÐ°</a>
+                                    <a class="ukrainian"><img src="assets/img/flags/ua.png" alt=""> ??????????</a>
                                 </li>
                                 <li>
                                     <a class="english"><img src="assets/img/flags/gb.png" alt=""> English</a>
                                 </li>
                                 <li>
-                                    <a class="espana"><img src="assets/img/flags/es.png" alt=""> EspaÃ±a</a>
+                                    <a class="espana"><img src="assets/img/flags/es.png" alt=""> Espa�a</a>
                                 </li>
                                 <li>
-                                    <a class="russian"><img src="assets/img/flags/ru.png" alt=""> Ð ÑÑÑÐºÐ¸Ð¹</a>
+                                    <a class="russian"><img src="assets/img/flags/ru.png" alt=""> ???????</a>
                                 </li>
                             </ul>
                         </li>
@@ -172,7 +161,9 @@
                                 <span class="badge headerBadgeColor2"> 2 </span>
                             </a>
                             <ul class="dropdown-menu animated slideInDown">
+
                                 <li class="external">
+
                                     <h3><span class="bold">Messages</span></h3>
                                     <span class="notification-label cyan-bgcolor">New 2</span>
                                 </li>
@@ -326,6 +317,7 @@
 			</div>
 		</div>
 		<!-- end color quick setting -->
+
         <!-- start page container -->
         <div class="page-container">
  			<!-- start sidebar menu -->
@@ -915,32 +907,50 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="card card-topline-purple">
-                                        <div class="card-head">
-                                            <header>STRIPED TABLE</header>
-                                            <div class="tools">
-                                                <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
-			                                    <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
-			                                    <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
-                                            </div>
-                                        </div>
-                                        <div class="card-body ">
-                                        <div class="table-responsive">
-                                            <table id="tablaUsuarios" class="table table-striped custom-table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th> idUsuario</th>
-                                                        <th>Nombre Usuario</th>
-                                                        <th>Tipo Usuario</th>
-                                                        <th>Status</th>
-                                                        <th>Descripcion</th>
-                                                        <th>Acciones</th>
-                                                    </tr>
-                                                </thead>
-                                                
-                                            </table>
-                                            </div>
-                                        </div>
+                                    <div class="card card-topline-yellow">
+                                    <div class="card-head">
+                                    <header>Agregar Usuario</header>
+                                    <button id = "panel-button2" class = "mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded = ",MaterialButton">
+				    <i class = "material-icons">more_vert</i>
+				    </button>
+				    <ul class = "mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for = "panel-button2">
+				    <li class = "mdl-menu__item"><i class="material-icons">assistant_photo</i>Action</li>
+				    <li class = "mdl-menu__item"><i class="material-icons">print</i>Another action</li>
+				    <li class = "mdl-menu__item"><i class="material-icons">favorite</i>Something else here</li>
+				    </ul>
+                                    </div>
+                                    <div class="card-body " id="bar-parent1">
+                                    <form class="form-horizontal"  id="miFormulario" action="./">
+                                    <div class="row" id="Formularios">
+	                                    <div class="col-md-6 col-sm-6 ">
+	                                        <!-- text input -->
+	                                        <div class="form-group">
+	                                            <label>Usuario</label>
+	                                            <input type="text" class="form-control" placeholder="Usuario" name="usuario">
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label>Contrase�a</label>
+	                                            <input type="text" class="form-control" placeholder="Contrase�a" name="contrase�a">
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label>Tipo de usuario</label>
+	                                            <select class="form-control" id="tablaTipos">
+
+	                                            </select>
+	                                        </div>
+	                                        
+	                                        
+	                                    </div>
+	                            <!-- <div class="col-md-6 col-sm-6" id="formMed">-->
+                                        <!-- textarea -->
+                                        
+                                           <!--<div class="offset-md-3 col-md-9">
+                                                <button type="submit" class="btn btn-info">Submit</button>
+                                                <button type="button" class="btn btn-default">Cancel</button>
+                                            </div>-->
+                                    </div>
+                                    </form>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -1311,7 +1321,8 @@
     <!-- summernote -->
     <script src="assets/plugins/summernote/summernote.min.js" ></script>
     <script src="assets/js/pages/summernote/summernote-data.js" ></script>
-    <script src="assets/js/pages/Usuarios/VerUsuarios.js" ></script>
+    <script src="assets/js/pages/Usuarios/VerTipos.js" ></script>
+    <script src="assets/js/pages/Usuarios/VerEspecialidad.js" ></script>
     <!-- end js include path -->
   </body>
 </html>
