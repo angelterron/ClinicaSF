@@ -15,6 +15,18 @@
         <servlet-name>BajaUsuario</servlet-name>
         <servlet-class>Servlet.BajaUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TiposUsuarios</servlet-name>
+        <servlet-class>Servlet.TiposUsuarios</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AgregarUsuarioMed</servlet-name>
+        <servlet-class>Servlet.AgregarUsuarioMed</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AgregarUsuarioEmp</servlet-name>
+        <servlet-class>Servlet.AgregarUsuarioEmp</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IniciarSesion</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -26,6 +38,18 @@
     <servlet-mapping>
         <servlet-name>BajaUsuario</servlet-name>
         <url-pattern>/desactivateUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TiposUsuarios</servlet-name>
+        <url-pattern>/showTipos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgregarUsuarioMed</servlet-name>
+        <url-pattern>/addUserMed</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgregarUsuarioEmp</servlet-name>
+        <url-pattern>/addUserEmp</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import POJOS.EspecialidadesMedicas;
 import POJOS.TipoUsuario;
 import POJOS.Usuario;
 import java.sql.PreparedStatement;
@@ -228,6 +229,82 @@ public class Consultas extends Conexion{
         return listaUsuarios;
     }
     
+    public ArrayList<TipoUsuario> getTipos(){
+        PreparedStatement pst=null;
+        ResultSet rs=null;
+  
+        ArrayList<TipoUsuario> listaTipos = new ArrayList<>();
+     try {            
+            String consulta="select * from Tipo_Usuario";
+            pst = getConexion().prepareStatement(consulta);
+            rs=pst.executeQuery();
+            while(rs.next()){
+                TipoUsuario tipoUsuario = new TipoUsuario();
+               
+                
+                //Llenando tipo
+                tipoUsuario.setIdTipo_Usuario(rs.getInt("idTipo_Usuario"));
+                tipoUsuario.setNombreTipo_Usuario(rs.getString("NombreTipo_Usuario"));
+                tipoUsuario.setStatus(rs.getInt("Status"));
+                tipoUsuario.setDescripcion(rs.getString("Descripcion"));
+                listaTipos.add(tipoUsuario);
+
+            }            
+        } catch (Exception e) {
+            System.err.println("Error"+e);
+        }finally{
+            try {
+                 if(getConexion()!=null)
+                    getConexion().close();
+                 if(pst!=null)
+                     pst.close();
+                 if(rs!=null)
+                     rs.close();
+            } catch (Exception e) {
+                System.err.println("Error "+e);
+            }
+        }
+        return listaTipos;
+    }
+    
+     public ArrayList<EspecialidadesMedicas> getEspecialidades(){
+        PreparedStatement pst=null;
+        ResultSet rs=null;
+        String result=null;
+        ArrayList<EspecialidadesMedicas> listaEspecialidades = new ArrayList<>();
+     try {            
+            String consulta="select * from Esp_Medicas";
+            pst = getConexion().prepareStatement(consulta);
+            rs=pst.executeQuery();
+            while(rs.next()){
+                EspecialidadesMedicas especialidades = new EspecialidadesMedicas();
+
+                //Llenando tipo
+                especialidades.setIdEsp_Medicas(rs.getInt("idEsp_Medicas"));
+                especialidades.setNombreEsp_Medica(rs.getString("NombreEsp_Medica"));
+                especialidades.setStatus(rs.getInt("Status"));
+                especialidades.setDescripcion(rs.getString("Descripcion"));
+                listaEspecialidades.add(especialidades);
+
+            }            
+        } catch (Exception e) {
+            System.err.println("Error"+e);
+        }finally{
+            try {
+                 if(getConexion()!=null)
+                    getConexion().close();
+                 if(pst!=null)
+                     pst.close();
+                 if(rs!=null)
+                     rs.close();
+            } catch (Exception e) {
+                System.err.println("Error "+e);
+            }
+        }
+        return listaEspecialidades;
+    }
+    
+    
     public boolean ActivarUsuario (String idUser){
         PreparedStatement pst=null;
         ResultSet rs=null;
@@ -287,5 +364,7 @@ public class Consultas extends Conexion{
         
         return false;
     }
+    
+
     
 }

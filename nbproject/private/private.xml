@@ -3,32 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/src/java/POJOS/Usuario.java</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/web/index.jsp</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/src/java/Servlet/Usuarios.java</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/src/java/Servlet/IniciarSesion.java</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/web/advanced_table.html</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/web/assets/js/pages/calendar/calendar.min.js</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/src/java/POJOS/TipoUsuario.java</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/src/java/DAO/Usuarios.java</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/web/assets/js/app.js</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/web/login.jsp</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/web/assets/js/pages/Usuarios/VerUsuarios.js</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/web/assets/js/pages/table/editable_table_data.js</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/src/java/Controlador/Consultas.java</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/web/VerUsuarios.jsp</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/src/java/Controlador/Conexion.java</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/web/assets/plugins/material/material.min.css</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/ClinicaSF/web/table_data.html</file>
-=======
-            <file>file:/Users/agustkd96/GitHub/ClinicaSF/src/java/Servlet/BajaUsuario.java</file>
-            <file>file:/Users/agustkd96/GitHub/ClinicaSF/web/assets/js/pages/Usuarios/VerUsuarios.js</file>
-            <file>file:/Users/agustkd96/GitHub/ClinicaSF/src/java/Servlet/Usuarios.java</file>
-            <file>file:/Users/agustkd96/GitHub/ClinicaSF/src/java/Controlador/Consultas.java</file>
-            <file>file:/Users/agustkd96/GitHub/ClinicaSF/src/java/Servlet/ActivarUsuario.java</file>
-            <file>file:/Users/agustkd96/GitHub/ClinicaSF/src/java/DAO/Usuarios.java</file>
->>>>>>> 89cf41d2a535e74d09d45697b85a937a0dc13329
+            <file>file:/Users/agustkd96/GitHub/ClinicaSF/src/java/Servlet/AgregarUsuarioMed.java</file>
+            <file>file:/Users/agustkd96/GitHub/ClinicaSF/web/WEB-INF/web.xml</file>
+            <file>file:/Users/agustkd96/GitHub/ClinicaSF/web/AgregarUsuarios.jsp</file>
+            <file>file:/Users/agustkd96/GitHub/ClinicaSF/web/assets/js/pages/Usuarios/VerTipos.js</file>
+            <file>file:/Users/agustkd96/GitHub/ClinicaSF/src/java/Servlet/AgregarUsuarioEmp.java</file>
+            <file>file:/Users/agustkd96/GitHub/ClinicaSF/web/login.jsp</file>
+            <file>file:/Users/agustkd96/GitHub/ClinicaSF/web/assets/js/pages/Usuarios/VerEspecialidad.js</file>
         </group>
     </open-files>
 </project-private>

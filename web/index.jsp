@@ -394,7 +394,7 @@
 	                                    </a>
 	                                </li>
 	                                <li class="nav-item ">
-	                                    <a href="dashboard2.html" class="nav-link ">
+	                                    <a href="AgregarUsuarios.jsp" class="nav-link ">
                                                 <i class="icon-user-follow"></i>
 	                                        <span class="title">Agregar Usuarios</span>
 	                                    </a>

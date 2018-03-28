@@ -1,13 +1,4 @@
 <!DOCTYPE html>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    HttpSession objsesion= request.getSession(false);
-    String usuario = (String) objsesion.getAttribute("usuario");
-    if(usuario==null){
-        response.sendRedirect("login.jsp");
-    }
-%>
 <html lang="en">
 <!-- BEGIN HEAD -->
 <head>
@@ -25,42 +16,26 @@
 	<link href="fonts/material-design-icons/material-icon.css" rel="stylesheet" type="text/css" />
 	<!--bootstrap -->
 	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<link href="assets/plugins/summernote/summernote.css" rel="stylesheet">
-    <!-- Material Design Lite CSS -->
+	<!-- Material Design Lite CSS -->
 	<link rel="stylesheet" href="assets/plugins/material/material.min.css">
 	<link rel="stylesheet" href="assets/css/material_style.css">
 	<!-- animation -->
 	<link href="assets/css/pages/animate_page.css" rel="stylesheet">
-	<!-- inbox style -->
-    <link href="assets/css/pages/inbox.min.css" rel="stylesheet" type="text/css" />
 	<!-- Theme Styles -->
     
-    <link href="assets/css/plugins.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/pages/formlayout.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/theme-color.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/theme-color.css" rel="stylesheet" type="text/css" />
 	<!-- favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.ico" /> 
- </head>
-<<<<<<< HEAD
- 
-    <div id="contenedor" class="row">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card card-topline-purple">
-                        <div class="card-head">
-                            <header>TABLA DE USUARIOS</header>
-                            <div class="tools">
-                                <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
-                                            <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
-                                            <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
-=======
- <!-- END HEAD -->
+</head>
+<!-- END HEAD -->
 <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white dark-sidebar-color logo-dark">
     <div class="page-wrapper">
         <!-- start header -->
-        <div class="page-header navbar navbar-fixed-top">
+		<div class="page-header navbar navbar-fixed-top">
             <div class="page-header-inner ">
                 <!-- logo start -->
                 <div class="page-logo">
@@ -99,16 +74,16 @@
                                     <a class="deutsch"><img src="assets/img/flags/de.png" alt=""> Deutsch</a>
                                 </li>
                                 <li>
-                                    <a class="ukrainian"><img src="assets/img/flags/ua.png" alt=""> Ð£ÐºÑÐ°ÑÐ½ÑÑÐºÐ°</a>
+                                    <a class="ukrainian"><img src="assets/img/flags/ua.png" alt=""> ??????????</a>
                                 </li>
                                 <li>
                                     <a class="english"><img src="assets/img/flags/gb.png" alt=""> English</a>
                                 </li>
                                 <li>
-                                    <a class="espana"><img src="assets/img/flags/es.png" alt=""> EspaÃ±a</a>
+                                    <a class="espana"><img src="assets/img/flags/es.png" alt=""> Espa�a</a>
                                 </li>
                                 <li>
-                                    <a class="russian"><img src="assets/img/flags/ru.png" alt=""> Ð ÑÑÑÐºÐ¸Ð¹</a>
+                                    <a class="russian"><img src="assets/img/flags/ru.png" alt=""> ???????</a>
                                 </li>
                             </ul>
                         </li>
@@ -186,7 +161,9 @@
                                 <span class="badge headerBadgeColor2"> 2 </span>
                             </a>
                             <ul class="dropdown-menu animated slideInDown">
+
                                 <li class="external">
+
                                     <h3><span class="bold">Messages</span></h3>
                                     <span class="notification-label cyan-bgcolor">New 2</span>
                                 </li>
@@ -340,6 +317,7 @@
 			</div>
 		</div>
 		<!-- end color quick setting -->
+
         <!-- start page container -->
         <div class="page-container">
  			<!-- start sidebar menu -->
@@ -929,32 +907,50 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="card card-topline-purple">
-                                        <div class="card-head">
-                                            <header>STRIPED TABLE</header>
-                                            <div class="tools">
-                                                <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
-			                                    <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
-			                                    <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
-                                            </div>
-                                        </div>
-                                        <div class="card-body ">
-                                        <div class="table-responsive">
-                                            <table id="tablaUsuarios" class="table table-striped custom-table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th> idUsuario</th>
-                                                        <th>Nombre Usuario</th>
-                                                        <th>Tipo Usuario</th>
-                                                        <th>Status</th>
-                                                        <th>Descripcion</th>
-                                                        <th>Acciones</th>
-                                                    </tr>
-                                                </thead>
-                                                
-                                            </table>
-                                            </div>
-                                        </div>
+                                    <div class="card card-topline-yellow">
+                                    <div class="card-head">
+                                    <header>Agregar Usuario</header>
+                                    <button id = "panel-button2" class = "mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded = ",MaterialButton">
+				    <i class = "material-icons">more_vert</i>
+				    </button>
+				    <ul class = "mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for = "panel-button2">
+				    <li class = "mdl-menu__item"><i class="material-icons">assistant_photo</i>Action</li>
+				    <li class = "mdl-menu__item"><i class="material-icons">print</i>Another action</li>
+				    <li class = "mdl-menu__item"><i class="material-icons">favorite</i>Something else here</li>
+				    </ul>
+                                    </div>
+                                    <div class="card-body " id="bar-parent1">
+                                    <form class="form-horizontal"  id="miFormulario" action="./">
+                                    <div class="row" id="Formularios">
+	                                    <div class="col-md-6 col-sm-6 ">
+	                                        <!-- text input -->
+	                                        <div class="form-group">
+	                                            <label>Usuario</label>
+	                                            <input type="text" class="form-control" placeholder="Usuario" name="usuario">
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label>Contrase�a</label>
+	                                            <input type="text" class="form-control" placeholder="Contrase�a" name="contrase�a">
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <label>Tipo de usuario</label>
+	                                            <select class="form-control" id="tablaTipos">
+
+	                                            </select>
+	                                        </div>
+	                                        
+	                                        
+	                                    </div>
+	                            <!-- <div class="col-md-6 col-sm-6" id="formMed">-->
+                                        <!-- textarea -->
+                                        
+                                           <!--<div class="offset-md-3 col-md-9">
+                                                <button type="submit" class="btn btn-info">Submit</button>
+                                                <button type="button" class="btn btn-default">Cancel</button>
+                                            </div>-->
+                                    </div>
+                                    </form>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -1145,30 +1141,161 @@
                                         </div>
                                     </div>
                                 </div>
->>>>>>> 995c35d8e0c4a18d58612a63d50012f58cca8356
                             </div>
                         </div>
-                        <div class="card-body ">
-                        <div class="table-responsive">
-                            <table id="tablaUsuarios" class="table table-striped custom-table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th> idUsuario</th>
-                                        <th>Nombre Usuario</th>
-                                        <th>Tipo Usuario</th>
-                                        <th>Status</th>
-                                        <th>Descripcion</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-
-                            </table>
+                        <!-- End Doctor Chat --> 
+ 						<!-- Start Setting Panel --> 
+ 						<div class="tab-pane chat-sidebar-settings animated slideInUp" role="tabpanel" id="quick_sidebar_tab_3">
+                            <div class="chat-sidebar-settings-list slimscroll-style">
+                                <div class="chat-header"><h5 class="list-heading">Layout Settings</h5></div>
+	                            <div class="chatpane inner-content ">
+									<div class="settings-list">
+					                    <div class="setting-item">
+					                        <div class="setting-text">Sidebar Position</div>
+					                        <div class="setting-set">
+					                           <select class="sidebar-pos-option form-control input-inline input-sm input-small ">
+	                                                <option value="left" selected="selected">Left</option>
+	                                                <option value="right">Right</option>
+                                            	</select>
+					                        </div>
+					                    </div>
+					                    <div class="setting-item">
+					                        <div class="setting-text">Header</div>
+					                        <div class="setting-set">
+					                           <select class="page-header-option form-control input-inline input-sm input-small ">
+	                                                <option value="fixed" selected="selected">Fixed</option>
+	                                                <option value="default">Default</option>
+                                            	</select>
+					                        </div>
+					                    </div>
+					                    <div class="setting-item">
+					                        <div class="setting-text">Sidebar Menu </div>
+					                        <div class="setting-set">
+					                           <select class="sidebar-menu-option form-control input-inline input-sm input-small ">
+	                                                <option value="accordion" selected="selected">Accordion</option>
+	                                                <option value="hover">Hover</option>
+                                            	</select>
+					                        </div>
+					                    </div>
+					                    <div class="setting-item">
+					                        <div class="setting-text">Footer</div>
+					                        <div class="setting-set">
+					                           <select class="page-footer-option form-control input-inline input-sm input-small ">
+	                                                <option value="fixed">Fixed</option>
+	                                                <option value="default" selected="selected">Default</option>
+                                            	</select>
+					                        </div>
+					                    </div>
+					                </div>
+									<div class="chat-header"><h5 class="list-heading">Account Settings</h5></div>
+									<div class="settings-list">
+					                    <div class="setting-item">
+					                        <div class="setting-text">Notifications</div>
+					                        <div class="setting-set">
+					                            <div class="switch">
+					                                <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+									                  for = "switch-1">
+									                  <input type = "checkbox" id = "switch-1" 
+									                     class = "mdl-switch__input" checked>
+									               	</label>
+					                            </div>
+					                        </div>
+					                    </div>
+					                    <div class="setting-item">
+					                        <div class="setting-text">Show Online</div>
+					                        <div class="setting-set">
+					                            <div class="switch">
+					                                <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+									                  for = "switch-7">
+									                  <input type = "checkbox" id = "switch-7" 
+									                     class = "mdl-switch__input" checked>
+									               	</label>
+					                            </div>
+					                        </div>
+					                    </div>
+					                    <div class="setting-item">
+					                        <div class="setting-text">Status</div>
+					                        <div class="setting-set">
+					                            <div class="switch">
+					                                <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+									                  for = "switch-2">
+									                  <input type = "checkbox" id = "switch-2" 
+									                     class = "mdl-switch__input" checked>
+									               	</label>
+					                            </div>
+					                        </div>
+					                    </div>
+					                    <div class="setting-item">
+					                        <div class="setting-text">2 Steps Verification</div>
+					                        <div class="setting-set">
+					                            <div class="switch">
+					                                <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+									                  for = "switch-3">
+									                  <input type = "checkbox" id = "switch-3" 
+									                     class = "mdl-switch__input" checked>
+									               	</label>
+					                            </div>
+					                        </div>
+					                    </div>
+					                </div>
+                                    <div class="chat-header"><h5 class="list-heading">General Settings</h5></div>
+                                    <div class="settings-list">
+					                    <div class="setting-item">
+					                        <div class="setting-text">Location</div>
+					                        <div class="setting-set">
+					                            <div class="switch">
+					                                <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+									                  for = "switch-4">
+									                  <input type = "checkbox" id = "switch-4" 
+									                     class = "mdl-switch__input" checked>
+									               	</label>
+					                            </div>
+					                        </div>
+					                    </div>
+					                    <div class="setting-item">
+					                        <div class="setting-text">Save Histry</div>
+					                        <div class="setting-set">
+					                            <div class="switch">
+					                                <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+									                  for = "switch-5">
+									                  <input type = "checkbox" id = "switch-5" 
+									                     class = "mdl-switch__input" checked>
+									               	</label>
+					                            </div>
+					                        </div>
+					                    </div>
+					                    <div class="setting-item">
+					                        <div class="setting-text">Auto Updates</div>
+					                        <div class="setting-set">
+					                            <div class="switch">
+					                                <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+									                  for = "switch-6">
+									                  <input type = "checkbox" id = "switch-6" 
+									                     class = "mdl-switch__input" checked>
+									               	</label>
+					                            </div>
+					                        </div>
+					                    </div>
+					                </div>
+	                        	</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- end chat sidebar -->
         </div>
+        <!-- end page container -->
+        <!-- start footer -->
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2018 &copy; Smile Admin Theme By
+            <a href="mailto:redstartheme@gmail.com" target="_top" class="makerCss">RedStar Theme</a>
+            </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!-- end footer -->
     </div>
     <!-- start js include path -->
     <script src="assets/plugins/jquery/jquery.min.js" ></script>
@@ -1193,8 +1320,9 @@
     <script src="assets/js/pages/chart/chartjs/home-data.js" ></script>
     <!-- summernote -->
     <script src="assets/plugins/summernote/summernote.min.js" ></script>
-    <script src="assets/js/pages/summernote/summernote-data.js" ></script>    
-    <script src="assets/js/pages/Usuarios/VerUsuarios.js" ></script>
+    <script src="assets/js/pages/summernote/summernote-data.js" ></script>
+    <script src="assets/js/pages/Usuarios/VerTipos.js" ></script>
+    <script src="assets/js/pages/Usuarios/VerEspecialidad.js" ></script>
     <!-- end js include path -->
   </body>
 </html>
