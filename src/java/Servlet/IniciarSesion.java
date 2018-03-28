@@ -89,11 +89,7 @@ public class IniciarSesion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        HttpSession objsesion= request.getSession(true);
-        String usuario = request.getParameter("usuario");        
-        response.getWriter().write(usuario);
-    //processRequest(request, response);
+            processRequest(request, response);
     }
 
     /**

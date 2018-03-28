@@ -9,6 +9,7 @@ import Controlador.Consultas;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author agustkd96
  */
+@WebServlet(name = "BajaUsuario", urlPatterns = {"/BajaUsuario"})
 public class BajaUsuario extends HttpServlet {
 
     /**
@@ -31,7 +33,7 @@ public class BajaUsuario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -46,7 +48,9 @@ public class BajaUsuario extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String idUser=request.getParameter("id");
+        DAO.Usuarios usuariosDAO= new DAO.Usuarios();
+        usuariosDAO.BajaUsuario(idUser);
     }
 
     /**
@@ -60,13 +64,7 @@ public class BajaUsuario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String idUser=request.getParameter("id");
-        DAO.Usuarios usuariosDAO= new DAO.Usuarios();
-        usuariosDAO.BajaUsuario(idUser);
-        
-        processRequest(request, response);
-        response.sendRedirect("VerUsuarios.jsp");
+                
     }
 
     /**

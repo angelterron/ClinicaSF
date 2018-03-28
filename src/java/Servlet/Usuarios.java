@@ -49,10 +49,9 @@ public class Usuarios extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         DAO.Usuarios usuariosDAO = new DAO.Usuarios();
+        DAO.Usuarios usuariosDAO = new DAO.Usuarios();
         ArrayList<Usuario> usuarios = usuariosDAO.obtenerUsuarios();
         String json = new Gson().toJson(usuarios);
-        processRequest(request, response);
         response.getWriter().write(json);
     }
 
